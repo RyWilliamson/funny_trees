@@ -19,5 +19,5 @@ treeFold :: (a->b->b) -> b -> FunnyTree a -> b
 treeFold f acc tree = foldr f acc (treeFlatten tree)
 
 treeFlatten :: FunnyTree a -> [a]
-treeFlatten (FunnyNode a []) = [a]
-treeFlatten (FunnyNode a subTree) = a: concat (map treeFlatten subTree)
+treeFlatten (FunnyNode x []) = [x]
+treeFlatten (FunnyNode x subTree) = x : concat (map treeFlatten subTree)
